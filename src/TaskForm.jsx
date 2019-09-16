@@ -26,7 +26,7 @@ class TaskForm extends Component {
                     type="text"
                     placeholder="Add a task"
                 />
-                <button>Confirmer</button>
+                <button className="btn btn-info">Confirmer</button>
             </form>
         );
     }
