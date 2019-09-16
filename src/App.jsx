@@ -1,25 +1,26 @@
 import React, { Component } from "react";
-import Task from "./Task";
+
 import TaskForm from "./TaskForm";
+import Task from "./Task";
 
 class App extends Component {
-    state = {
-        tasks: []
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            tasks: []
+        };
+    }
 
     handleDelete = id => {
         const tasks = [...this.state.tasks];
         const index = tasks.findIndex(task => task.id === id);
-
         tasks.splice(index, 1);
-
         this.setState({ tasks });
     };
 
     handleAdd = task => {
         const tasks = [...this.state.tasks];
         tasks.push(task);
-
         this.setState({ tasks });
     };
 
