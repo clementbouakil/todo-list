@@ -37,7 +37,7 @@ class TaskForm extends Component {
                     />
                 </InputGroup>
                 <Button variant="info" type="submit">
-                    Confirmer
+                    Confirm
                 </Button>
             </form>
         );

@@ -5,7 +5,7 @@ import Task from "./Task";
 
 import ListGroup from "react-bootstrap/ListGroup";
 
-class App extends Component {
+class TaskGenerate extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,11 +27,9 @@ class App extends Component {
     };
 
     render() {
-        const title = "List of tasks";
-
         return (
             <div className="container">
-                <h1>{title}</h1>
+                <h1>List of tasks</h1>
                 <ListGroup className="mb-3">
                     {this.state.tasks.map(task => (
                         <Task
@@ -47,4 +45,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default TaskGenerate;
