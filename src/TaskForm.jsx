@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
 
 class TaskForm extends Component {
     state = {
@@ -20,13 +23,22 @@ class TaskForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input
-                    value={this.state.item}
-                    onChange={this.handleChange}
-                    type="text"
-                    placeholder="Add a task"
-                />
-                <button className="btn btn-info">Confirmer</button>
+                <InputGroup className="mb-3">
+                    <InputGroup.Prepend>
+                        <InputGroup.Text id="task">Tasks</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl
+                        type="text"
+                        placeholder="Enter a task"
+                        aria-label="task_name"
+                        aria-describedby="task"
+                        value={this.state.item}
+                        onChange={this.handleChange}
+                    />
+                </InputGroup>
+                <Button variant="info" type="submit">
+                    Confirmer
+                </Button>
             </form>
         );
     }

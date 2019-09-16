@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import TaskForm from "./TaskForm";
 import Task from "./Task";
 
+import ListGroup from "react-bootstrap/ListGroup";
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -28,9 +30,9 @@ class App extends Component {
         const title = "List of tasks";
 
         return (
-            <div>
+            <div className="container">
                 <h1>{title}</h1>
-                <ul>
+                <ListGroup className="mb-3">
                     {this.state.tasks.map(task => (
                         <Task
                             key={task.id}
@@ -38,7 +40,7 @@ class App extends Component {
                             onDelete={this.handleDelete}
                         />
                     ))}
-                </ul>
+                </ListGroup>
                 <TaskForm onTaskAdd={this.handleAdd} />
             </div>
         );
