@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-import Alert from "react-bootstrap/Alert";
 
 import "./Task.css";
+import AlertMessage from "../App/Alert/AlertMessage";
 
 class TaskForm extends Component {
     state = {
@@ -30,9 +30,7 @@ class TaskForm extends Component {
     render() {
         return (
             <div className="task-form">
-                <Alert variant="danger" hidden={this.state.isEmpty} className="task-form-error">
-                    Please send a valid value
-                </Alert>
+                <AlertMessage error={this.state.isEmpty} />
                 <form onSubmit={this.handleSubmit}>
                     <input
                         type="text"

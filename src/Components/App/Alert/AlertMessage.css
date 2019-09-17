@@ -1,0 +1,9 @@
+.task-form-error {
+    background-color: #fb3640;
+    color: #eef4ed;
+    border: none;
+}
+
+.task-form-error .close {
+    color: #eef4ed;
+}
