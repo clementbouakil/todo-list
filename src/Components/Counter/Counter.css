@@ -6,7 +6,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
     top: -25px;
-    left: -135px;
+    left: -25px;
+    font-size: 20pt;
 }
