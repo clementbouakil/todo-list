@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
 import Alert from "react-bootstrap/Alert";
+
+import "./Task.css";
 
 class TaskForm extends Component {
     state = {
@@ -29,27 +29,29 @@ class TaskForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <Alert variant="danger" hidden={this.state.isEmpty}>
+            <div className="task-form">
+                <Alert variant="danger" hidden={this.state.isEmpty} className="task-form-error">
                     Please send a valid value
                 </Alert>
-                <InputGroup className="mb-3">
-                    <InputGroup.Prepend>
-                        <InputGroup.Text id="task">Tasks</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl
+                <form onSubmit={this.handleSubmit}>
+                    <input
                         type="text"
                         placeholder="Enter a task"
                         aria-label="task_name"
                         aria-describedby="task"
                         value={this.state.item}
                         onChange={this.handleChange}
+                        className="task-form-control mb-3"
                     />
-                </InputGroup>
-                <Button variant="info" type="submit">
-                    Confirm
-                </Button>
-            </form>
+                    <Button
+                        variant="btn btn-outline-light"
+                        type="submit"
+                        className="task-form-button mb-3"
+                    >
+                        Add
+                    </Button>
+                </form>
+            </div>
         );
     }
 }

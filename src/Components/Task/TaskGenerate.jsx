@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import TaskForm from "./TaskForm";
 import Task from "./Task";
+import "./Task.css";
 
 import ListGroup from "react-bootstrap/ListGroup";
 
@@ -29,9 +30,12 @@ class TaskGenerate extends Component {
 
     render() {
         return (
-            <div className="todo-list">
-                <p>Number of task in list : {this.state.tasks.length}</p>
-                <ListGroup className="mb-1">
+            <div className="task-generate-container">
+                <div>
+                    <h1 className="task-generate-title">Todos</h1>
+                    <TaskForm onTaskAdd={this.handleAdd} />
+                </div>
+                <ListGroup className="task-list">
                     {this.state.tasks.map(task => (
                         <Task
                             key={task.id}
@@ -40,7 +44,6 @@ class TaskGenerate extends Component {
                         />
                     ))}
                 </ListGroup>
-                <TaskForm onTaskAdd={this.handleAdd} />
             </div>
         );
     }
