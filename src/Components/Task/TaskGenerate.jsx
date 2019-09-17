@@ -5,6 +5,7 @@ import Task from "./Task";
 import "./Task.css";
 
 import ListGroup from "react-bootstrap/ListGroup";
+import Counter from "../Counter/Counter";
 
 class TaskGenerate extends Component {
     constructor(props) {
@@ -36,6 +37,7 @@ class TaskGenerate extends Component {
                     <TaskForm onTaskAdd={this.handleAdd} />
                 </div>
                 <ListGroup className="task-list">
+                    <Counter number={this.state.tasks.length} />
                     {this.state.tasks.map(task => (
                         <Task
                             key={task.id}

@@ -46,7 +46,7 @@ class TaskForm extends Component {
                     <Button
                         variant="btn btn-outline-light"
                         type="submit"
-                        className="task-form-button mb-3"
+                        className="task-form-button mb-5"
                     >
                         Add
                     </Button>
