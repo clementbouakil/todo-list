@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
+import Alert from "react-bootstrap/Alert";
 
 class TaskForm extends Component {
     state = {
-        item: ""
+        item: "",
+        isEmpty: true
     };
 
     handleChange = event => {
@@ -14,15 +16,23 @@ class TaskForm extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        const id = new Date().getTime();
-        const name = this.state.item;
-        this.props.onTaskAdd({ name, id });
-        this.setState({ item: "" });
+        if (this.state.item !== "") {
+            const id = new Date().getTime();
+            const name = this.state.item;
+            this.props.onTaskAdd({ name, id });
+            this.setState({ item: "" });
+            this.setState({ isEmpty: true });
+        } else {
+            this.setState({ isEmpty: false });
+        }
     };
 
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
+                <Alert variant="danger" hidden={this.state.isEmpty}>
+                    Please send a valid value
+                </Alert>
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
                         <InputGroup.Text id="task">Tasks</InputGroup.Text>

@@ -9,7 +9,8 @@ class TaskGenerate extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: []
+            tasks: [],
+            isSuccess: null
         };
     }
 
@@ -28,9 +29,9 @@ class TaskGenerate extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h1>List of tasks</h1>
-                <ListGroup className="mb-3">
+            <div className="todo-list">
+                <p>Number of task in list : {this.state.tasks.length}</p>
+                <ListGroup className="mb-1">
                     {this.state.tasks.map(task => (
                         <Task
                             key={task.id}
