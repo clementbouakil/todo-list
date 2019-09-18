@@ -34,7 +34,7 @@ class TaskGenerate extends Component {
         return (
             <div className="task-generate-container">
                 <div>
-                    <h1 className="task-generate-title">Todos</h1>
+                    <h1 className="task-generate-title">To Do List</h1>
                     <TaskForm onTaskAdd={this.handleAdd} />
                 </div>
                 <ListGroup className="task-list">

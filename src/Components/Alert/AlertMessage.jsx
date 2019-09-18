@@ -8,7 +8,6 @@ const AlertMessage = ({ error }) => {
     return (
         <Alert
             variant="danger"
-            dismissible
             className="task-form-error"
             hidden={error}
         >

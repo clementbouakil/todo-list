@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 
 import "./Task.css";
-import AlertMessage from "../App/Alert/AlertMessage";
+import AlertMessage from "../Alert/AlertMessage";
 
 class TaskForm extends Component {
     state = {
@@ -29,7 +29,7 @@ class TaskForm extends Component {
 
     render() {
         return (
-            <div className="task-form">
+            <div className="task-form mb-5">
                 <AlertMessage error={this.state.isEmpty} />
                 <form onSubmit={this.handleSubmit}>
                     <input
@@ -39,14 +39,14 @@ class TaskForm extends Component {
                         aria-describedby="task"
                         value={this.state.item}
                         onChange={this.handleChange}
-                        className="task-form-control mb-3"
+                        className="task-form-control"
                     />
                     <Button
                         variant="btn btn-outline-light"
                         type="submit"
-                        className="task-form-button mb-5"
+                        className="task-form-button"
                     >
-                        Add
+                        <ion-icon name="add-circle"></ion-icon>
                     </Button>
                 </form>
             </div>

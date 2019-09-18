@@ -10,14 +10,20 @@
     font-size: 5em;
 }
 
+.task-form form {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
 .task-form-control {
     background-color: transparent;
     border: none;
     border-bottom: 0.5px solid #eef4ed;
     border-radius: 0;
-    padding: 1vh;
-    width: 100%;
     color: black;
+    display: block;
+    width: 70%;
 }
 
 .task-form-control:focus {
@@ -25,13 +31,19 @@
 }
 
 .task-form-button {
-    width: 100%;
-    background-color: #0b2545;
+    background-color: transparent;
+    height: 70px;
+    width: 70px;
     border: none;
 }
 
+.task-form-button ion-icon {
+    width: 100%;
+    height: 100%;
+}
+
 .task-form-button:hover {
-    background-color: #eef4ed;
+    background-color: transparent;
     color: #0b2545;
 }
 
