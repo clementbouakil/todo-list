@@ -21,7 +21,7 @@ class TaskForm extends Component {
             const name = this.state.item;
             this.props.onTaskAdd({ name, id });
             this.setState({ item: "" });
-            this.setState({ isEmpty: true });
+            this.setState({ isEmpty: !this.state.isEmpty });
         } else {
             this.setState({ isEmpty: false });
         }

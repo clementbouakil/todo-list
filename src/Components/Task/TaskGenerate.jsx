@@ -11,15 +11,24 @@ class TaskGenerate extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: [],
-            isSuccess: null
+            tasks: [
+                {
+                    id: 1,
+                    name: "todo 1"
+                },
+                {
+                    id: 2,
+                    name: "todo 2"
+                }
+            ],
+            isSuccess: null,
+            isChecked: null
         };
     }
 
     handleDelete = id => {
         const tasks = [...this.state.tasks];
         const index = tasks.findIndex(task => task.id === id);
-        console.log(index)
         tasks.splice(index, 1);
         this.setState({ tasks });
     };
@@ -34,7 +43,7 @@ class TaskGenerate extends Component {
         return (
             <div className="task-generate-container">
                 <div>
-                    <h1 className="task-generate-title">To Do List</h1>
+                    <h1 className="task-generate-title">Todo</h1>
                     <TaskForm onTaskAdd={this.handleAdd} />
                 </div>
                 <ListGroup className="task-list">
